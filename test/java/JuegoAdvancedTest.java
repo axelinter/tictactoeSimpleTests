@@ -86,11 +86,11 @@ public class JuegoAdvancedTest {
                     return cx;
                 }
 
-                if (posicion.getX() == 0 && posicion.getY() == 0) {
+                if (posicion.getX() == 0 && posicion.getY() == 1) {
                     return cx;
                 }
 
-                if (posicion.getX() == 0 && posicion.getY() == 0) {
+                if (posicion.getX() == 0 && posicion.getY() == 2) {
                     return cx;
                 }
 
