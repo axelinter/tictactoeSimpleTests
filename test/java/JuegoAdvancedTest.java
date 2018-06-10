@@ -6,12 +6,47 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class JuegoAdvancedTest {
+    //Testeo
     @Test
     public void whenBoardIsFullGameIsOver () {
         Juego game = new Juego(createFullBoard(), new Player[0]);
         assertTrue(game.isOver());
     }
+    @Test
+    public void whoWonWhenXHasColumnReturnsX(){
+        Player[] players = createPlayers();
+        Juego game = new Juego(createColumnWinnerXBoard(),players);
+        assertEquals(game.whoWon(),players[0]);
+    }
 
+    @Test
+    public void whoWonWhenXHasLineReturnsX(){
+        Player[] players = createPlayers();
+        Juego game = new Juego(createLineWinnerXBoard(),players);
+        assertEquals(game.whoWon(),players[0]);
+    }
+
+    @Test
+    public void whoWonWhenXHasDiagonalReturnsX(){
+        Player[] players = createPlayers();
+        Juego game = new Juego(createDiagonalWinnerXBoard(),players);
+        assertEquals(game.whoWon(),players[0]);
+    }
+
+    @Test
+    public void whoWonWhenXHasInvertedDiagonalReturnsX(){
+        Player[] players = createPlayers();
+        Juego game = new Juego(createInvertedDiagonalWinnerXBoard(),players);
+        assertEquals(game.whoWon(),players[0]);
+    }
+
+    @Test
+    public void whoWonWhenNobodyWonReturnsNull(){
+        Player[] players = createPlayers();
+        Juego game = new Juego(createFullBoard(),players);
+        assertNull(game.whoWon());
+    }
+// Metodos utilizando mockito
     private Tablero createFullBoard() {
         Tablero board = mock(Tablero.class);
         Casilla occupiedSquare = mock(Casilla.class);
