@@ -71,4 +71,33 @@ public class JuegoAdvancedTest {
         });
         return board;
     }
+    private Tablero crearLineaxGanadoras(){
+        final Tablero board = mock(Tablero.class);
+
+        final Casilla cn = createNeutralCasilla();
+        final Casilla cx = createXCasilla();
+
+
+        when(board.getCasilla(any(Posicion.class))).thenAnswer(new Answer<Casilla>() {
+            public Casilla answer(InvocationOnMock invocationOnMock) {
+                Posicion posicion = (Posicion) invocationOnMock.getArguments()[0];
+
+                if (posicion.getX() == 0 && posicion.getY() == 0) {
+                    return cx;
+                }
+
+                if (posicion.getX() == 0 && posicion.getY() == 0) {
+                    return cx;
+                }
+
+                if (posicion.getX() == 0 && posicion.getY() == 0) {
+                    return cx;
+                }
+
+                return cn;
+            }
+        });
+        return board;
+    }
+
 }
