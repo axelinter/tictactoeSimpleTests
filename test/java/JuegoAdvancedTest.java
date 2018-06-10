@@ -20,5 +20,28 @@ public class JuegoAdvancedTest {
         when(board.getCasilla(any(Posicion.class))).thenReturn(occupiedSquare);
         return board;
     }
-    
+    private Player[] createPlayers(){
+        Player[] players = new Player[2];
+        Player playerX = mock(Player.class);
+        when(playerX.getChip()).thenReturn('x');
+        Player o = mock(Player.class);
+        when(o.getChip()).thenReturn('o');
+        players[0] = playerX;
+        players[1] = o;
+        return players;
+    }
+
+    private Casilla createNeutralCasilla() {
+        final Casilla cn = mock(Casilla.class);
+        when(cn.getChip()).thenReturn(' ');
+        when(cn.isOccupied()).thenReturn(false);
+        return cn;
+    }
+
+    private Casilla createXCasilla() {
+        final Casilla cx = mock(Casilla.class);
+        when(cx.getChip()).thenReturn('x');
+        when(cx.isOccupied()).thenReturn(true);
+        return cx;
+    }
 }
