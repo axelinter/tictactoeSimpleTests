@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
-
+//Axel Telkamper Queralto
 public class JuegoAdvancedTest {
     //Testeo
     @Test

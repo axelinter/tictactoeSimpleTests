@@ -108,8 +108,6 @@ public class JuegoTest {
         Casilla cx = mock(Casilla.class);
         when(cx.getChip()).thenReturn('x');
         when(cx.isOccupied()).thenReturn(true);
-
-        //Sustituyo la casilla en vez de hacer otro thenReturn por como funciona Mockito
         board[0][2] = cx;
         board[1][1] = cx;
         board[2][0] = cx;
