@@ -1,3 +1,5 @@
+package game;
+
 public class Juego {
     private Tablero tablero;
     private Player[] players;

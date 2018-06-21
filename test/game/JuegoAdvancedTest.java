@@ -1,5 +1,10 @@
+package game;
 import org.junit.jupiter.api.Test;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.stubbing.Answer;
 
+import static org.junit.Assert.assertNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.mock;
@@ -15,28 +20,28 @@ public class JuegoAdvancedTest {
     @Test
     public void whoWonWhenXHasColumnReturnsX(){
         Player[] players = createPlayers();
-        Juego game = new Juego(createColumnWinnerXBoard(),players);
+        Juego game = new Juego(crearColumnasxGanadoras(),players);
         assertEquals(game.whoWon(),players[0]);
     }
 
     @Test
     public void whoWonWhenXHasLineReturnsX(){
         Player[] players = createPlayers();
-        Juego game = new Juego(createLineWinnerXBoard(),players);
+        Juego game = new Juego(crearLineaxGanadoras(),players);
         assertEquals(game.whoWon(),players[0]);
     }
 
     @Test
     public void whoWonWhenXHasDiagonalReturnsX(){
         Player[] players = createPlayers();
-        Juego game = new Juego(createDiagonalWinnerXBoard(),players);
+        Juego game = new Juego(crearDiagonalGanadora(),players);
         assertEquals(game.whoWon(),players[0]);
     }
 
     @Test
     public void whoWonWhenXHasInvertedDiagonalReturnsX(){
         Player[] players = createPlayers();
-        Juego game = new Juego(createInvertedDiagonalWinnerXBoard(),players);
+        Juego game = new Juego(crearIndiagonalGanadora(),players);
         assertEquals(game.whoWon(),players[0]);
     }
 

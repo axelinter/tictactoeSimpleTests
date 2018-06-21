@@ -1,10 +1,12 @@
+package game;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CasillaTest {
 
-    @Test
+    @org.junit.Test
     public void newSquareIsEmpty() {
         Casilla c = new Casilla();
         assertFalse(c.isOccupied());

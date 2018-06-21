@@ -1,3 +1,5 @@
+package game;
+
 public class Casilla {
     private boolean occupied;
     private char chip;
